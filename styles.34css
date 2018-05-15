@@ -1,0 +1,406 @@
+
+@font-face {
+font-family: 'MYRIADPROREGULAR';
+src: url('app/fonts/MYRIADPROREGULAR.eot'); 
+src: url('app/fonts/MYRIADPROREGULAR.eot?#iefix') format('embedded-opentype'), 
+   url('app/fonts/MYRIADPROREGULAR.woff') format('woff'), 
+   url('app/fonts/MYRIADPROREGULAR.ttf')  format('truetype'), 
+   url('app/fonts/MYRIADPROREGULAR.svg#calibri') format('svg');
+}
+*{ outline:none !important;}
+body{   
+font-family: 'MYRIADPROREGULAR', sans-serif, Arial, Helvetica;  
+ }
+
+div.special > div[class*="col-"] {
+    padding: 0;
+}
+.clear{ clear:both;}
+
+.headerDiv {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: #FFF;
+    min-height: 64px;
+}
+  .inner { width:95%; margin: 0 auto; max-width:1172px; }
+  
+  
+.headerDiv .inner { padding:0  0;}
+
+.headerDiv .logoDiv{ }
+
+.headerDiv .myNavbar {
+    float: right;
+    margin-top: 18px;
+}
+
+.myNavbar .user_icon {
+    margin-right: 6px;
+    vertical-align: middle;
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+}
+.myNavbar .user_icon .icon{  }
+
+.myNavbar  small{  display: inline-block; vertical-align: middle;}
+
+.slim-loading-bar {
+
+    top: 65px !important;
+}
+
+
+
+#footer  {
+    position: fixed;
+    width: 100%;
+    min-height: 25px;
+    background: #ededed;
+    left: 0;
+    bottom: 0; z-index:10;
+}
+
+#footer  h6  {
+    text-align: center;
+    color: #96979b;
+    font-size: 12px;
+    line-height: 24px;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+.showcase {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.showcase .imgClass {
+        width: 100%;
+        height: auto; display:block; margin: 0 auto; min-height:620px;  min-width:1220px; 
+}
+
+    .showcase_text {
+        position: absolute;
+        top: 30vh;
+    }
+
+    .showcase_text h2+h2 {
+        padding-top: 10px;
+    }
+
+    .slogan__style-1 {
+        font-size: 60px;
+        line-height: 60px;
+    }
+
+    .slogan__style-2 {
+        font-size: 80px;
+        line-height: 80px;
+    }
+
+    .slogan__style-3 {
+        font-size: 48px;
+        line-height: 48px;
+    }
+	
+	
+	
+.sectionDiv .inner {
+    padding-top: 65px;
+    padding-bottom: 30px;
+}
+
+.sectionDiv.sectionDiv1 {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+.sectionDiv .setBox {
+    float: right;
+    width: 390px;
+    margin-right: 160px;
+    margin-top: 90px;
+    margin-bottom: 40px;
+}
+
+.sectionDiv .panel-default {
+    background: #efefef;
+    width: 100%;
+    padding: 20px 30px;
+}
+
+.sectionDiv .signInDiv  {
+    margin-top: 2px;
+    margin-bottom: 0;
+    font-size: 24px;
+    border-bottom: 1px solid #CCC;
+    padding-bottom: 12px;
+}
+
+.sectionDiv  .pbody{ padding:20px 0;}
+
+.sectionDiv .formtext {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.sectionDiv  .setrelative  {
+    position: relative;
+}
+.sectionDiv .setBox .input-lg  {
+    height: 41px;
+    padding: 5px 16px;
+    font-size: 18px;
+    line-height: normal;
+    border-radius: 6px;
+    padding-left: 32px;
+}
+
+.setBox .setIcon  {
+    position: absolute;
+    width: 18px;
+    height: 20px;
+    background: url(app/images/sprit.png) no-repeat -2px -2px;
+    top: 50%;
+    margin-top: -10px;
+    left: 10px;
+    display: block;
+}
+
+.setBox .setIcon.icon1 {
+      background-position: -2px -2px;
+}
+
+.setBox .setIcon.icon2 {
+    background-position: -2px -34px;
+}
+
+
+
+.setSearch {
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 150px;
+    margin-bottom: 50px;
+    min-width: 879px;
+}
+label.msg {
+    font-size: 16px;
+    font-family: 'MYRIADPROREGULAR';
+    color: #FFF;
+    font-weight: 400;
+    text-shadow: 0 1px 3px #000;
+    padding-bottom: 4px;
+}
+label.msg.msg2 {
+    font-size: 12px;
+    margin-top: 8px;
+}
+label.msg .red { color:#e35a5f; }
+
+ .glyphBtn{ min-width:60px;}
+ 
+.input-group-lg>.input-group-btn>.btn.glyphBtn {
+    padding-top: 7px;
+}
+.serachBoxDiv .glyphBtn .image_search {
+    display: inline-block;
+    width: 31px;
+    height: 31px;
+    background: url(app/images/sprit.png) no-repeat 0px -73px;
+}
+ 
+.serachBoxDiv .input-lg::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #333;
+}
+.serachBoxDiv .input-lg:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #333;
+   opacity:  1;
+}
+.serachBoxDiv .input-lg::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    #333;
+   opacity:  1;
+}
+.serachBoxDiv .input-lg:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #333;
+}
+.serachBoxDiv .input-lg::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #333;
+}
+
+
+
+.resultDiv{ margin-top: 64px;} 
+.resultDiv .setPic{ padding-right: 21px;} 
+.resultDiv .setPic .blockOverflow {
+    max-width: 268px;
+    overflow: hidden;
+    float: right;
+}
+.resultDiv .setInfo {
+    padding-left: 21px;
+    text-align: left;
+    padding-top: 121px;
+}
+
+.resultDiv .mainImage {
+    height: 196px;
+    width: auto;
+    margin-right: 0px;  
+}
+.resultDiv .table-bordered {
+    border: 1px solid #cdd0d4;
+}
+
+.resultDiv .table-bordered > thead > tr > th {
+    border:none;
+    color: #666;
+    font-size: 16px;
+	border-bottom: 1px solid #cdd0d4;
+}
+.resultDiv .table-bordered > tbody > tr > td {
+    border:none; 
+}
+
+.setTable {}
+.setTable  thead > tr > th:nth-child(1){width: 5% !important;}
+.setTable thead > tr > th:nth-child(2){width: 18% !important;}
+.setTable thead > tr > th:nth-child(3){width: 15% !important;}
+.setTable thead > tr > th:nth-child(4){width: 15% !important;}
+.setTable thead > tr > th:nth-child(5){ }
+.setTable thead > tr > th:nth-child(6){width: 8% !important;}
+
+
+#feedbackModal .modal-body {
+    padding: 54px 0;
+}
+#feedbackModal .modal-body  h4 {
+    font-size: 24px; color:#000;
+}
+#feedbackModal .modal-body h6 {
+    font-size: 16px;
+    margin: 0;
+}
+#feedbackModal .modal-body small {
+    font-size: 13px; 
+}
+
+#feedbackModal .modal-content{ background: #f7f7f7;}
+
+#feedbackModal .modal-dialog {
+    width: 800px;
+    background: #f7f7f7;
+    margin: 0 auto;
+}
+#feedbackModal  .modal-content { 
+    border: none; border-radius:0; margin-top: 84px;
+}
+
+#feedbackModal .modalCloseButtonStyle {
+    position: absolute;
+    z-index: 1;
+    right: 8px;
+    top: 10px;
+    display: block;
+}
+#feedbackModal .modalCloseButtonStyle span{ display:block; width:25px; height:25px; background: url(app/images/sprit.png) no-repeat -96px -81px;}
+
+
+#feedbackModal .deleteButtonStyle {
+    position: absolute;
+    z-index: 1;
+    right: 15px;
+    bottom: 0px;
+    display: block;
+    width: 53px;
+    height: 64px;
+    background: rgba(51, 51, 51, 0.6);
+}
+#feedbackModal .deleteButtonStyle span {
+    display: block;
+    width: 33px;
+    height: 43px;
+    background: url(app/images/sprit.png) no-repeat -91px -116px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+#feedbackModal .link {
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    width: 29px;
+    height: 52px;
+        background: url(app/images/sprit.png) no-repeat -135px -114px;
+}
+#feedbackModal  .link.left{      left: -60px;}
+#feedbackModal  .link.right{  right:-60px; background-position: -171px -114px;}
+
+#feedbackModal .modalStarImage {
+    position: absolute;
+    top: 3px;
+    right: 63px;
+    width: 20px;
+    height: 20px; 
+    border-radius: 50%;
+}
+#feedbackModal .modalStarImage  img{     display: block;
+    margin: 0 auto;
+    margin-top: 4px;
+}
+
+#feedbackModal .modalElipseImage{
+  position: absolute;
+    top: 0px;
+    right: 63px;
+    width: 20px;
+    height: 20px; 
+    border-radius: 50%;
+}
+#feedbackModal .modalElipseImage  img{ width:100%; height:100%;     
+}
+
+.showmsg {
+    background: #f7f7f7;
+    border-radius: 6px;
+    padding: 18px 16px;
+    margin-bottom: 30px;
+    position: absolute;
+    width: 100%;
+    margin-top: -113px;
+}
+.showmsg h2 {
+    margin: 0;
+    letter-spacing: -.6px;
+    white-space: nowrap;
+    text-align: left;
+}
+.showmsg span{ display:inline; vertical-align:middle; }
+.showmsg .icon-exclamation-sign {
+    width: 51px;
+    height: 51px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url(app/images/sprit.png) no-repeat -150px -56px;
+    margin-right: 12px;
+    zoom: .8;
+}
+
+.showmsg .text{ color:#FF0000; font-size:22px;}
+.showmsg .text2 {
+    color: #525252;
+    font-size: 15px;
+    margin-left: 46px;
+}

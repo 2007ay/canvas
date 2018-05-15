@@ -1,0 +1,183 @@
+ 
+  <div class="showcase" style="background-color:#DCDCDC">
+    <!--img src="app/images/loginback.png" alt="" class="imgClass">--> 
+</div> 
+
+ 
+ 
+ <section>
+<div class="sectionDiv sectionDiv1">
+   <div class="inner">
+ 
+ 
+ <div class="setSearch">
+ 
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+         
+        
+               
+               
+               
+            <form>
+            
+            
+             
+                    
+                    <div class="container-fluid">
+                    
+                    <div class="row" *ngIf="errorMessageVisi">
+                            <div class="col-sm-12"> 
+                            
+                            
+                             <div class="showmsg"> 
+                            <h2   class="text-center">
+                            <span class="icon-exclamation-sign"></span>
+                             <span class="text">{{'Invalid image format or size' | translate}}</span>
+                             <span class="text2">{{'Try  Searching by image type' | translate}}<strong>.PNG</strong>, <strong>.JPG</strong>, <strong>.TIFF</strong>, <strong>.MMR</strong> and image size upto 2 MB  </span>
+                             </h2>
+                            </div>
+                            
+                            
+                     </div>
+                      </div> 
+                     
+                     
+                    
+                        <div class="row">
+                            <div class="col-sm-5"> 
+                                <!-- <div class="demo-droppable" [ngClass]="dummyVar == true ? 'active' : 'active2'">  -->
+                                        <div class="demo-droppable" [class.disabled]="disableDIV" [ngClass]="{'active': activeClass, 'activeTTF': activettfClass}"> 
+                                  
+                                        <div *ngIf="tif" id="tiffImageId">
+                                  
+                                        </div> 
+                                  <div *ngIf="nontif" id="nontiffImageId">
+                                    <img [src]="url"  [ngClass]="hideDummyImageOnDragDrop == true ? 'hideImage' : 'dragDropImageStyle'">
+                                  </div>
+                                 
+                                </div>
+                                <br>
+                     
+                                
+                            </div>
+
+
+   
+
+                          
+
+                                <div  class="col-sm-7">
+                                    <div class="serachBoxDiv">
+                                   
+                                    <div *ngIf="display">
+                                            <div class="input-group input-group-lg">
+                                               
+                                                        
+                                                <div class="input-group-btn">
+                                                    <div class="process">
+                                                    <button id="processId" class="btn btn-default btn-lg glyphBtn" type="submit" [disabled]="disableSegmentBth">Process</button>
+                                                    </div>
+                                                </div>
+                                                
+                                                
+                                              
+                                            </div>
+                                    </div> 
+                                    
+                                    <div id="class">
+                                         <label class="msg" style="color:black">{{ 'class' | translate }}</label> 
+                                            
+                                                    <div class="input-group input-group-lg">
+                                                            <input type="text" style="width: 260px"
+                                                            class="form-control input-lg" 
+                                                            [(ngModel)]="searchString"
+                                                            onkeypress="return String.fromCharCode(event.charCode).match(/[0-9,]/g) != null"
+                                                            [placeholder]="'placeholder' | translate" 
+                                                            name="q" 
+                                                            (ngModelChange)="classMessageVisi($event)"
+                                                            [disabled]="notTakeImageOnDragDrop || noInput"
+                                                            >
+
+                                                            <label style="margin-left:150px;margin-top:16px;font-size: 16px"><strong>{{'OR' | translate}}</strong></label>
+                                               <!--         <div class="input-group-btn">
+                                                            <button class="btn btn-default btn-lg glyphBtn" (click)="searchClick()" [disabled]="disableSearchBtn || invalidClassMessage"><i class="image_search"></i></button>
+                                                            
+                            
+                                                        </div>
+                                                    -->
+
+                                                    </div> 
+
+                                                    <div *ngIf="invalidClassMessage">
+                                                            <em class="emailVali">{{'Invalid Class'| translate}}</em>
+                                                     </div>
+
+                                                 
+
+                                                            <label  class="msg msg2" style="color:black">{{'Search multiple classes separated with comma'|translate}}</label>
+
+                                               
+
+                                                   
+
+                                                </div>
+
+                                                
+                                           
+                                     </div>
+
+                                     
+
+                                        </div> 
+                                        <div class="row">
+                                        <div class="input-group-btn">
+                                            <button style="width:280px;margin-left:660px;margin-top:-380px"  class="btn btn-lg glyphBtn" (click)="searchClick()" [disabled]="disableSearchBtn || invalidClassMessage">{{'Search' | translate}}</button>
+                                        </div>
+                                        </div>
+                                           <!--   <strong>OR</strong>-->
+                                          
+                                           <div class="row">
+                                        <div class="input-group-btn">
+                                            <button style="width:280px;margin-left:660px;margin-top:-150px" class="btn btn-default btn-lg glyphBtn" (click)="segmentClick()" [disabled]="disableSegmentBth || invalidClassMessage">{{'Segment & Search' | translate}}</button>
+                                         </div>
+                                           </div>
+                                         
+                        </div>
+                        
+                     </div>
+                    
+            </form>
+            <div style="display:none;">
+                <button class="btn btn-primary" id="openServerErrorModal" data-toggle="modal" data-target="#serverErrorModal"></button>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+ 
+ 
+ </div>
+ </div>
+ </section>
+
+
+    <!--internal server error Modal -->
+    <div id="serverErrorModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+    
+            <!-- Modal content-->
+            <div class="modal-content">
+                
+                <div class="modal-body text-center">
+                     <span class="text1">  </span>
+                     <span class="text2">{{serverErrorText}}</span>
+                     <span class="text3">{{'Please try again'| translate}}</span>
+                    <button type="button" class="btn btn-danger " data-dismiss="modal">OK</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>

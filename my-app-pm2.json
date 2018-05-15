@@ -1,0 +1,13 @@
+{
+	"apps":[
+	{
+		"name":"Toshiba-STSS-User",
+		"cwd":"./",
+		"script":"npm",
+		"args":"start"
+	}
+
+	]	
+
+}
+

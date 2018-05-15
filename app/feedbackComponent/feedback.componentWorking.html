@@ -1,0 +1,497 @@
+
+
+<div class="resultDiv">
+
+
+    <!-- -----------------main image with clear button----------------------------------- -->
+    <div class="container-fluid">
+        <div class="row special firstImageDiv">
+
+            <div class="col-xs-6">
+                <div class="setPic">
+                    <div class="blockOverflow" *ngIf="showMainImage">
+                        <img src="{{holdMainImage}}" class="mainImage">
+                    </div>
+                    <div *ngIf="showFileName">
+                            <div class="blockOverflow setMid" >
+                            <span> {{holdFileNameForTTF}}</span>
+                            </div>
+                        </div>
+                   
+                </div>
+               
+            </div>
+
+            <div class="col-xs-6">
+                <div class="setInfo">
+                    <div>
+                        <small class="result">About {{totalSearchResult}} results</small>
+                    </div>
+                     <div>
+                    <small class="fontColor">Class : {{holdClassEnteredByUser}}</small>
+                    </div> 
+                    <div class="imgeInfoStyle">
+                        <small class="fontColor">Image type:{{ImageType}}, image size:{{holdMainImageInfo.size/1024 | number : '1.2-2'}}KB</small>
+                    </div>
+                    <div>
+                        <button class="btn clearresultButton" (click)="ClearResult()">Clear Result</button>
+                    </div>
+                </div>
+            </div>
+            <div style="display:none;">
+                <button class="btn btn-primary" id="openServerErrorModal" data-toggle="modal" data-target="#serverErrorModal"></button>
+            </div>
+
+        </div>
+        
+        <div class="row special">
+        <div class="col-xs-12">
+            <!-- ---------------------------- tab's section----------------------------------------------------- -->
+    <section class="section">
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 pricingDiv">
+
+
+                    <div id="exTab1">
+                        <div class="tabs">
+                            <ul class="list-inline listInline">
+                                <li *ngIf="myFavTabVisiWhenGridTabActive">
+                                    <a [ngClass]="myFavTab == true ? 'myFavTabActive' : 'dummyClass'" (click)="myFavTabClicked()"><span class="text">My Favorites</span><span class="icon icon03"><img src="app/images/table1.png" class="addcurser"></span></a>
+                                </li>
+                                <li *ngIf="myfavTabVisiWhenListTabActive">
+                                    <a [ngClass]="myFavTabInListView == true ? 'myFavTabActive' : 'dummyClass'" (click)="myFavInListViewClicked()"><span class="text">My Favorites</span><span class="icon icon03"><img src="app/images/table1.png" class="addcurser"></span></a>
+                                </li>
+
+                                <li *ngIf="allResultTectVisiWhenListViewActive">
+                                    <a class="full" href="javascript:void(0);" [ngClass]="AllListView == true ? 'ListViewActive' : 'dummyClass'" href="#1a" data-toggle="tab"><span class="text text2" (click)="allListResult()">All Result</span></a>
+                                </li>
+                                <li *ngIf="allResultTectVisiWhenGridViewActive">
+                                    <a class="full" href="javascript:void(0);" [ngClass]="AllgridView == true ? 'GridViewActive' : 'dummyClass'" href="#2a" data-toggle="tab"
+                                        (click)="AllGridResultClicked()"><span class="text text2">All Result</span></a>
+                                </li>
+
+
+                                <li>
+                                    <a [ngClass]="gridView == true ? 'GridViewActive' : 'dummyClass'" href="#2a" data-toggle="tab" (click)="GridTabClicked()"><span class="icon icon02"><img src="app/images/table3.png" class="addcurser"></span></a>
+                                </li>
+
+                                <li>
+                                    <a [ngClass]="listView == true ? 'ListViewActive' : 'dummyClass'" href="#1a" data-toggle="tab" (click)="ListTabClicked()"><span class="icon icon01"> <img src="app/images/table2.png" class="addcurser"></span></a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ------------------------------------------------------------------------------------- -->
+
+        </div>
+        </div>
+    </div> 
+    <!-- -------------------------------------------------------------------------------------------- -->
+
+
+
+
+
+
+    <div class="container">
+        <div class="tab-content clearfix">
+
+            <!--------------------------List View All Rsults start here---------------------------------->
+            <div class="tab-pane active" id="1a">
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-6" *ngIf="cnnCat">
+                        <div>
+                            <p class="TableMainHeading">CNN Result <span class="smallText">Showing {{cnnTableDisplayDataLength}} out of {{cnnTableDataLength}} images </span></p>
+                        </div>
+                        <div style="margin-top:20vh;">
+                            <h3 class="text-center" style="color:red"><span><img src="app/images/warning.png" class="warningImg"></span>&nbsp;No search result found!</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6" *ngIf="ifAllcat">
+                        <div class="row">
+                            <p class="TableMainHeading">CNN Result <span class="smallText">Showing {{cnnTableDisplayDataLength}} out of {{cnnTableDataLength}} images </span></p>
+                        </div>
+                        <div style="margin-top:15vh;" *ngIf="cnnTableDisplayDataLength == 0">
+                            <h3 class="text-center" style="color:red"><span><img src="app/images/warning.png" class="warningImg"></span>&nbsp;No positively marked
+                                images found!</h3>
+                        </div>
+                        <table class="table table-bordered table-hover setTable" *ngIf="cnnTableDisplayDataLength != 0">
+                            <thead>
+                                <tr>
+                                    <th class="thcolor">#</th>
+                                    <th class="thcolor">Image</th>
+                                    <th class="thcolor">Score
+                                        <span class="icon04">
+                                    <button type="button" class="setButton buttontop" (click)="sortAsc('CNN')"></button>
+                                    <button type="button" class="setButton buttonbottom" (click)="sortDesc('CNN')"></button>
+                                    </span>
+                                    </th>
+                                    <th class="thcolor">Number</th>
+                                    <th class="thcolor">Name</th>
+                                    <th class="thcolor" style="padding-right: 30px;">Class</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let data of cnnTableDisplayData; let i = index" [style.backgroundColor]="i%2 == 0 ? '#f6f7fa' : '#fff'">
+                                    <td>{{i+1}}</td>
+                                    <td>
+                                        <div class="setPicRelative">
+                                            <img class="img-responsive secondTabImageStyle" src={{data.imageURL}} data-toggle="modal" data-target="#feedbackModal" (click)="WhichModalToShow('CNN', data.localId)">
+
+                                            <span class="setStar active" *ngIf="data.status == 1" (click)="MarkrelevanceCNN(i,data)">
+                                        <i> </i>
+                                    </span>
+                                            <span class="setStar" *ngIf="data.imageURL" (click)="MarkrelevanceCNN(i,data)"> 
+                                        <i> </i>
+                                    </span>
+                                        </div>
+
+                                    </td>
+                                    <td>{{ data.score }}</td>
+                                    <td class="hoverIt">{{ data.applicationNumber }}</td>
+                                    <td class="hoverIt">{{ data.imageName }}</td>
+                                    <!-- <td class="hoverIt">{{ data.imageClassType }}</td> -->
+                                    <td>
+                                        <li *ngFor="let v of data.imageClassType2; let lastElement = last " style="list-style:none">{{v }}<span *ngIf="!lastElement">,</span><br/></li>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="col-md-6" *ngIf="blank">
+                    </div>
+                    <div class="col-md-6" *ngIf="siftCat">
+                        <div>
+                            <p class="TableMainHeading">SIFT Result <span class="smallText">Showing {{siftTableDisplayDataLength}} out of {{siftTableDataLength}} images </span></p>
+                        </div>
+                        <div style="margin-top:22vh;">
+                            <h3 class="text-center" style="color:red"><span><img src="app/images/warning.png" class="warningImg"></span>&nbsp;No search result found!</h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6" *ngIf="ifSiftCatPresent">
+                        <div class="row">
+                            <p class="TableMainHeading">SIFT Result <span class="smallText">Showing {{siftTableDisplayDataLength}} out of {{siftTableDataLength}} images </span></p>
+                        </div>
+                        <div style="margin-top:15vh;" *ngIf="siftTableDisplayDataLength == 0">
+                            <h3 class="text-center" style="color:red"><span><img src="app/images/warning.png" class="warningImg"></span>&nbsp;No positively marked
+                                images found!</h3>
+                        </div>
+                        <table class="table table-bordered table-hover setTable" *ngIf="siftTableDisplayDataLength != 0">
+                            <thead>
+                                <tr>
+                                    <th class="thcolor">#</th>
+                                    <th class="thcolor">Image</th>
+                                    <th class="thcolor">Score
+                                        <span class="icon04">
+                                    <button type="button" class="setButton buttontop" (click)="sortAsc('SIFT')"></button>
+                                    <button type="button" class="setButton buttonbottom" (click)="sortDesc('SIFT')"></button>
+                                    </span>
+                                    </th>
+                                    <th class="thcolor">Number</th>
+                                    <th class="thcolor">Name</th>
+                                    <th class="thcolor" style="padding-right: 30px;">Class</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let data of siftTableDisplayData; let i = index" [style.backgroundColor]="i%2 == 0 ? '#f6f7fa' : '#fff'">
+                                    <td>{{i+1}}</td>
+                                    <td class="text-center">
+
+                                        <div class="setPicRelative">
+                                            <img class="img-responsive secondTabImageStyle" src={{data.imageURL}} data-toggle="modal" data-target="#feedbackModal" (click)="WhichModalToShow('SIFT', data.localId)">
+                                            <span class="setStar active" *ngIf="data.status == 1" (click)="MarkrelevanceSIFT(i,data)">
+                                            <i> </i>
+                                        </span>
+
+                                            <span class="setStar" *ngIf="data.imageURL" (click)="MarkrelevanceSIFT(i,data)"> 
+                                            <i> </i>
+                                        </span>
+                                        </div>
+
+                                    </td>
+                                    <td class="hoverIt">{{ data.score }}</td>
+                                    <td class="hoverIt">{{ data.applicationNumber }}</td>
+                                    <td class="hoverIt">{{ data.imageName }}</td>
+                                    <td>
+                                            <li *ngFor="let v of data.imageClassType2; let lastElement = last " style="list-style:none">{{v }}<span *ngIf="!lastElement">,</span><br/></li>
+                                        </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row" *ngIf="NoStringFound" style="    margin-bottom: 30vh;padding-top: 20vh;">
+                    <h3 class="text-center" style="color:red"><span><img src="app/images/warning.png" class="warningImg"></span>&nbsp;No search result found!</h3>
+                </div>
+            </div>
+            <!-- ------------------------------------End---------------------------------------------- -->
+
+
+
+            <!--------------------------------Grid View Result start here-------------------------------->
+            <div class="tab-pane secondTabMainDiv" id="2a">
+                <div class="row">
+                    <div class="col-md-6" *ngIf="cnnCat">
+                        <div>
+                            <p class="TableMainHeading">CNN Result <span class="smallText">Showing {{cnnTableDisplayDataLength}} out of {{cnnTableDataLength}} images </span></p>
+                        </div>
+                        <div style="margin-top:20vh;">
+                            <h3 class="text-center" style="color:red"><span><img src="app/images/warning.png" class="warningImg"></span>&nbsp;No search result found!</h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6" *ngIf="ifAllcat">
+                        <div class="row">
+                            <p class="TableMainHeading">CNN Result <span class="smallText">Showing {{cnnTableDisplayDataLength}} out of {{cnnTableDataLength}} images </span></p>
+                        </div>
+                        <div style="margin-top:15vh;" *ngIf="cnnTableDisplayDataLength == 0">
+                            <h3 class="text-center" style="color:red"><span><img src="app/images/warning.png" class="warningImg"></span>&nbsp;No positively marked
+                                images found!</h3>
+                        </div>
+                        <div class="row special thumnbnailStyle" *ngIf="cnnTableDisplayDataLength != 0">
+
+                            <div class="col-sm-4 text-center" *ngFor="let secondTabdata of cnnTableDisplayData;let i = index;">
+                                <div class="aboveColumn" *ngIf="secondTabdata.imageURL">
+                                    <div class="setPicRelative">
+                                        <img class="img-responsive secondTabImageStyle" src={{secondTabdata.imageURL}} data-toggle="modal" data-target="#feedbackModal"
+                                            (click)="WhichModalToShow('CNN', secondTabdata.localId)">
+                                        <div class="setBottonDiv">
+                                            <p><span class="smallText">{{secondTabdata.score}}</span></p>
+                                        </div>
+
+                                        <span class="setStar active" *ngIf="secondTabdata.status == 1" (click)="MarkrelevanceCNN(i,secondTabdata)">
+                                        <i> </i>
+                                    </span>
+                                        <span class="setStar" *ngIf="secondTabdata.imageURL" (click)="MarkrelevanceCNN(i,secondTabdata)"> 
+                                        <i> </i>
+                                    </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 col-sm-12" *ngIf="blank">
+                    </div>
+
+
+                    <div class="col-md-6" *ngIf="siftCat">
+                        <div>
+                            <p class="TableMainHeading">SIFT Result <span class="smallText">Showing {{siftTableDisplayDataLength}} out of {{siftTableDataLength}} images </span></p>
+                        </div>
+                        <div style="margin-top:22vh;">
+                            <h3 class="text-center" style="color:red"><span><img src="app/images/warning.png" class="warningImg"></span>&nbsp;No search result found!</h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6" *ngIf="ifSiftCatPresent">
+                        <div class="row">
+                            <p class="TableMainHeading">SIFT Result <span class="smallText">Showing {{siftTableDisplayDataLength}} out of {{siftTableDataLength}} images </span></p>
+                        </div>
+                        <div style="margin-top:15vh;" *ngIf="siftTableDisplayDataLength == 0">
+                            <h3 class="text-center" style="color:red"><span><img src="app/images/warning.png" class="warningImg"></span>&nbsp;No positively marked
+                                images found!</h3>
+                        </div>
+                        <div class="row special thumnbnailStyle" *ngIf="siftTableDisplayDataLength != 0">
+
+                            <div class="col-sm-4 text-center" *ngFor="let secondTabdata of siftTableDisplayData; let i = index;">
+                                <div class="aboveColumn" *ngIf="secondTabdata.imageURL">
+
+                                    <div class="setPicRelative">
+                                        <img class="img-responsive secondTabImageStyle" style="    max-height: 80px;     max-width: 106px;   margin: 0 auto;" src={{secondTabdata.imageURL}}
+                                            data-toggle="modal" data-target="#feedbackModal" (click)="WhichModalToShow('SIFT',  secondTabdata.localId)">
+                                        <div class="setBottonDiv">
+                                            <p><span class="smallText">{{secondTabdata.score}}</span></p>
+                                        </div>
+
+                                        <span class="setStar active" *ngIf="secondTabdata.status == 1" (click)="MarkrelevanceSIFT(i,secondTabdata)">
+                                        <i> </i>
+                                    </span>
+                                        <span class="setStar" *ngIf="secondTabdata.imageURL" (click)="MarkrelevanceSIFT(i,secondTabdata)"> 
+                                        <i> </i>
+                                    </span>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row" *ngIf="NoStringFound" style="    margin-bottom: 30vh;padding-top: 20vh;">
+                    <h3 class="text-center" style="color:red"><span><img src="app/images/warning.png" class="warningImg"></span>&nbsp;No search result found!</h3>
+                </div>
+            </div>
+            <!-- ------------------------------------End------------------------------------------------->
+
+
+
+            <!-- <button type="button" class="close" data-dismiss="modal" title="Close" (click)="clearModal()"> <span class="glyphicon glyphicon-remove"></span></button> -->
+            <!-- -------------------------------- modal with carousel start here------------------------------------- -->
+            <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="myModalLabel" data-controls-modal="AddFormModal"
+                data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <a class="modalCloseButtonStyle" data-dismiss="modal" (click)="clearModal()" title="Close"><span  class="glyphicon_remove "></span></a>
+                        <div class="modal-body">
+                            <div class="row text-center" style="margin-top: -40px; margin-bottom: 16px;">
+                                <h4>Details</h4>
+                            </div>
+
+                            <!--begin carousel-->
+                            <div id="myGallery" class="carousel xslide" data-interval="false">
+                                 <div class="carousel-inner" *ngIf="onlyShowToCNNModal">
+                                    <div *ngFor="let modalData of cnnTableDisplayData; let i=index;" [ngClass]="modalData.localId == [cnnImageIndex] ? 'item active' : 'item'">
+                                        <div class="row">
+                                            <div class="col-sm-6 modalLeftCol text-center">
+                                                <button class="btn btn-lg xbtn-link setBTNMy setLeft"  *ngIf="i != 0"  (click)="getCurrentObjectInModal(modalData,cnnTableDisplayData,i, 'pre')" data-slide="prev" href="#myGallery">&nbsp;</button>
+                                                <div class="setPicRelative">
+                                                    <img src={{modalData.imageURL}} class="ModalImage img-responsive">
+
+
+                                                    <span class="setStar active" *ngIf="modalData.status == 1" (click)="MarkrelevanceCNN(i,modalData)">
+                                        <i> </i>
+                                    </span>
+                                                    <span class="setStar" (click)="MarkrelevanceCNN(i,modalData)"> 
+                                        <i> </i>
+                                    </span>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <button class="btn btn-lg xbtn-link setBTNMy setRight" *ngIf="i+1 != cnnTableDisplayData.length" id="relevantImagesClose"  (click)="getCurrentObjectInModal(modalData,cnnTableDisplayData,i,'next')" data-slide="next" href="#myGallery">&nbsp;</button>
+                                                <div>
+                                                    <h6><b>Image Name</b></h6>
+                                                    <small>{{modalData.imageName}}</small>
+                                                </div><br>
+                                                <div>
+                                                    <h6><b>Score</b></h6>
+                                                    <small>{{modalData.score}}</small>
+                                                </div><br>
+                                                <div>
+                                                    <h6><b>Number</b></h6>
+                                                    <small>{{modalData.applicationNumber}}</small>
+                                                </div><br>
+                                                <div>
+                                                    <h6><b>Class</b></h6>
+                                                    <small>{{modalData.imageClassType}}</small>
+                                                </div><br>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <!--end carousel-inner-->
+                                <div class="carousel-inner" *ngIf="onlyShowToSIFTModal">
+                                    <div *ngFor="let modalData of siftTableDisplayData; let i=index;" [ngClass]="modalData.localId == [siftImageIndex] ? 'item active' : 'item'">
+                                        <div class="row">
+                                        
+                                        <!--<div class="col-xs-12">
+                                         <button class="btn btn-lg xbtn-link setBTNMy setLeft"  id="relevantImagesClose"  (click)="getCurrentObjectInModal(modalData,siftTableDisplayData,i)">&nbsp;</button>
+                                         
+                                            <button class="btn btn-lg xbtn-link setBTNMy setRight"  id="relevantImagesClose"  (click)="getCurrentObjectInModal(modalData,siftTableDisplayData,i)">&nbsp;</button>
+                                        </div>-->
+                                            
+                                            <div class="col-sm-6 modalLeftCol text-center">
+                                               
+                                             <button class="btn btn-lg xbtn-link setBTNMy setLeft" *ngIf="i != 0"  (click)="getCurrentObjectInModal(modalData,siftTableDisplayData,i, 'pre')" data-slide="prev" href="#myGallery">&nbsp;</button>
+                                               
+                                         
+                                            
+                                                <div class="setPicRelative">
+                                                    <img src={{modalData.imageURL}} class="ModalImage img-responsive">
+
+                                                    <span class="setStar active" *ngIf="modalData.status == 1" (click)="MarkrelevanceSIFT(i,modalData)">
+                                        <i> </i>
+                                    </span>
+
+                                                    <span class="setStar" (click)="MarkrelevanceSIFT(i,modalData)"> 
+                                        <i> </i>
+                                    </span>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-sm-6">
+                                            <button class="btn btn-lg xbtn-link setBTNMy setRight"  *ngIf="i+1 != siftTableDisplayData.length" id="relevantImagesClose"  (click)="getCurrentObjectInModal(modalData,siftTableDisplayData,i,'next')" data-slide="next" href="#myGallery">&nbsp;</button>
+                                                <div>
+                                                    <h6><b>Image Name</b></h6>
+                                                    <small>{{modalData.imageName}}</small>
+                                                </div><br>
+                                                <div>
+                                                    <h6><b>Score</b></h6>
+                                                    <small>{{modalData.score}}</small>
+                                                </div><br>
+                                                <div>
+                                                    <h6><b>Number</b></h6>
+                                                    <small>{{modalData.applicationNumber}}</small>
+                                                </div><br>
+                                                <div>
+                                                    <h6><b>Class</b></h6>
+                                                    <small>{{modalData.imageClassType}}</small>
+                                                </div>
+                                            </div>
+                                           
+                                             
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <!--end carousel-inner-->
+                                 <!-- <div>
+                                    <a class="link left " [ngClass]="preArrowVisi == true ? 'hidePreArror' : 'dontHideArrow'"  role="button"> <span  class="glyphicon_left"></span></a>
+                                </div> -->
+                                <!-- <div >
+                                    <a class="link right " [ngClass]="nextArrowVisi == true ? 'hideArror' : 'dontHideArrow'"   role="button" > <span  class="glyphicon_right"></span></a>
+                                </div>  -->
+
+                                <!-- block-size: inherit; -->
+
+                                <!--end carousel-->
+                            </div>
+                        </div>
+
+                        <!--end modal-content-->
+                    </div>
+                    <!--end modal-dialoge-->
+                </div>
+            </div>
+            <!-- --------------------------------------------------------------------------------------------------- -->
+            <div class="text-center setMargin2">
+                <button class="btn loadMore" *ngIf="hasMore()" (click)="loadMoreClick()">Load More</button>
+            </div>
+        </div>
+
+
+
+        
+    <!--internal server error Modal -->
+    <div id="serverErrorModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+    
+            <!-- Modal content-->
+            <div class="modal-content">
+                
+                <div class="modal-body text-center">
+                     <span class="text1">500</span>
+                     <span class="text2">We are sorry, but something went wrong.</span>
+                     <span class="text3">Please try again.</span>
+                    <button type="button" class="btn btn-danger " data-dismiss="modal">OK</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>

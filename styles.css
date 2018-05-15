@@ -1,0 +1,646 @@
+@font-face {
+font-family: 'MYRIADPROREGULAR';
+src: url('app/fonts/MYRIADPROREGULAR.eot'); 
+src: url('app/fonts/MYRIADPROREGULAR.eot?#iefix') format('embedded-opentype'), 
+   url('app/fonts/MYRIADPROREGULAR.woff') format('woff'), 
+   url('app/fonts/MYRIADPROREGULAR.ttf')  format('truetype'), 
+  url('app/fonts/MYRIADPROREGULAR.svg#calibri') format('svg');
+}
+*{ outline:none !important;}
+body{   
+font-family: 'MYRIADPROREGULAR', sans-serif, Arial, Helvetica;  
+ }
+
+div.special > div[class*="col-"] {
+    padding: 0;
+}
+.clear{ clear:both;}
+
+.headerDiv {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: #FFF;
+    min-height: 64px;
+}
+  .inner { width:95%; margin: 0 auto; max-width:1172px; }
+  
+  
+.headerDiv .inner { padding:0  0;}
+
+.headerDiv .logoDiv{ }
+
+.headerDiv .myNavbar {
+    float: right;
+    margin-top: 18px;
+}
+
+.myNavbar .user_icon {
+    margin-right: 6px;
+    vertical-align: middle;
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+}
+.myNavbar .user_icon .icon{  }
+
+.myNavbar  small{  display: inline-block; vertical-align: middle;}
+
+
+.slim-loading-bar {
+
+    top: 65px !important;
+}
+
+
+#footer  {
+    position: fixed;
+    width: 100%;
+    min-height: 25px;
+    background: #ededed;
+    left: 0;
+    bottom: 0; z-index:10;
+}
+
+#footer  h6  {
+    text-align: center;
+    color: #96979b;
+    font-size: 12px;
+    line-height: 24px;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+.showcase {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.showcase .imgClass {
+        width: 100%;
+        height: auto; display:block; margin: 0 auto; min-height:620px;  min-width:1220px; 
+}
+
+    .showcase_text {
+        position: absolute;
+        top: 30vh;
+    }
+
+    .showcase_text h2+h2 {
+        padding-top: 10px;
+    }
+
+    .slogan__style-1 {
+        font-size: 60px;
+        line-height: 60px;
+    }
+
+    .slogan__style-2 {
+        font-size: 80px;
+        line-height: 80px;
+    }
+
+    .slogan__style-3 {
+        font-size: 48px;
+        line-height: 48px;
+    }
+	
+	
+	
+.sectionDiv .inner {
+    padding-top: 65px;
+    padding-bottom: 30px;
+}
+
+.sectionDiv.sectionDiv1 {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+.sectionDiv .setBox {
+    float: right;
+    width: 390px;
+    margin-right: 160px;
+    margin-top: 90px;
+    margin-bottom: 40px;
+}
+
+.sectionDiv .panel-default {
+    background: #efefef;
+    width: 100%;
+    padding: 20px 30px; position: relative;
+}
+.sectionDiv .panel-default .alert {
+    padding: 3px 10px;
+    margin: 0;
+    position: absolute;
+    top: -25px;
+    width: 100.5%;
+    left: -1px;
+}
+
+.sectionDiv .signInDiv  {
+    margin-top: 2px;
+    margin-bottom: 0;
+    font-size: 24px;
+    border-bottom: 1px solid #CCC;
+    padding-bottom: 12px;
+}
+
+.sectionDiv  .pbody{ padding:20px 0;}
+
+.sectionDiv .formtext {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.sectionDiv  .setrelative  {
+    position: relative;
+}
+.sectionDiv .setBox .input-lg  {
+    height: 41px;
+    padding: 5px 16px;
+    font-size: 18px;
+    line-height: normal;
+    border-radius: 6px;
+    padding-left: 32px;
+}
+
+.setBox .setIcon  {
+    position: absolute;
+    width: 18px;
+    height: 20px;
+    background: url(app/images/sprit.png) no-repeat -2px -2px;
+    top: 50%;
+    margin-top: -10px;
+    left: 10px;
+    display: block;
+}
+
+.setBox .setIcon.icon1 {
+      background-position: -2px -2px;
+}
+
+.setBox .setIcon.icon2 {
+    background-position: -2px -34px;
+}
+
+
+
+.setSearch {
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 150px;
+    margin-bottom: 50px;
+    min-width: 879px;
+}
+label.msg {
+    font-size: 16px;
+    font-family: 'MYRIADPROREGULAR';
+    color: #FFF;
+    font-weight: 400;
+    margin-top: 0px;
+    /*text-shadow: 0 1px 3px #000;*/
+    padding-bottom: 4px;
+}
+label.msg.msg2 {
+    font-size: 12px;
+	font-family: 'MYRIADPROREGULAR';
+	font-weight: 400;
+    margin-top: 8px;
+    width: 260px;
+}
+label.msg .red { color:#e35a5f; }
+
+ .glyphBtn{ min-width:60px;}
+ .glyphBtn2{ min-width:60px;}
+.input-group-lg>.input-group-btn>.btn.glyphBtn {
+    padding-top: 7px;
+  
+}
+
+.input-group-lg>.input-group-btn1>.btn.glyphBtn {
+    padding-top: 7px;
+  
+}
+.serachBoxDiv .glyphBtn .image_search {
+    display: inline-block;
+    width: 31px;
+    height: 31px;
+    background: url(app/images/sprit.png) no-repeat 0px -73px;
+}
+ 
+.serachBoxDiv .input-lg::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #333;
+    font-size: 14px;
+    
+}
+.serachBoxDiv .input-lg:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #333;
+   opacity:  1;
+   font-size: 14px;
+}
+.serachBoxDiv .input-lg::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    #333;
+   opacity:  1;
+   font-size: 14px;
+}
+.serachBoxDiv .input-lg:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #333;
+   font-size: 14px;
+}
+.serachBoxDiv .input-lg::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #333;
+   font-size: 14px;
+}
+
+.classNameTD{
+    width: 14%;
+}
+
+.resultDiv {
+   margin-top: 423px;
+}
+
+
+
+.resultDiv.noheader{  margin-top: 400px; margin-top: 385px;}
+.resultDiv.noheader .container-fluid .setTable{ display:none;}
+
+
+
+
+.setScrolling{
+    /* height: 51vh; */
+    overflow-x: auto;
+    padding-left: 17px;
+}
+.resultDiv.noheader .setScrolling { }
+
+
+.resultDiv .container-fluid {
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    top: 64px;
+    margin-top: 0;
+}
+.resultDiv .setPic{ padding-right: 21px;} 
+.resultDiv .setPic .blockOverflow {
+    width: 300px;
+    overflow: hidden;
+    float: right;
+    height: 199px;
+    position: relative;
+}
+.resultDiv .setPic .blockOverflow.setMid{ text-align: center; background: #CCC; min-width:200px; position: relative; text-overflow:ellipsis; }
+.resultDiv .setPic .blockOverflow.setMid span {
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 94%;
+    transform: translate(-50%, -50%);
+}
+.resultDiv .setInfo {
+   padding-left: 21px;
+    text-align: left;
+    padding-top: 97px;
+}
+.resultDiv .mainImage {
+    display: block;
+    height: auto;
+    width: auto;
+    opacity: 1;
+    top: auto;
+    right: 4px;
+    position: absolute;
+    border: 1px solid #c2c2c2;
+    max-width: 292px;
+    max-height: 191px;
+    background: #FFF;
+    z-index: 1;
+    bottom: 7px;
+    padding: 5px;
+}
+
+
+.resultDiv .table-bordered {
+    border: 1px solid #cdd0d4;     margin-bottom: 0;
+}
+
+.resultDiv .table-bordered > thead > tr > th {
+    border:none;
+    color: #666;
+    font-size: 16px;
+	border-bottom: 1px solid #cdd0d4;
+}
+.resultDiv .table-bordered > tbody > tr > td {
+    border:none;  position: relative;
+}
+
+.numberTDwidth{
+    width: 30%;
+}
+
+
+.th{
+    text-align: center;
+    margin-right: 50px;
+}
+.td{
+    border:1px solid #000;
+    text-align: center;
+}
+
+.tr td:last-child{
+    width:1%;
+    white-space:nowrap;
+    
+}
+
+
+
+
+
+
+.setTable .icon04 {
+    display: inline-block; 
+    width: 10px;
+    height: 12px; position:relative; vertical-align: middle;
+}
+.setTable .icon04 .setButton { position:absolute;
+    display:block;
+    background: url(app/images/sprit.png) no-repeat -60px -115px;
+    width: 10px;
+    height: 6px;
+    cursor: pointer;  border:none; outline:none;
+}
+.setTable .icon04 .setButton.buttontop {   top:0;
+}
+.setTable .icon04 .setButton.buttonbottom { 
+    background-position: -60px -122px; bottom:0; 
+}
+
+.setTable .icon04  { 
+       background-position: -62px -128px;
+}
+
+#feedbackModal .modal-body {
+    padding: 54px 0;
+}
+#feedbackModal .modal-body  h4 {
+    font-size: 24px; color:#000;
+}
+#feedbackModal .modal-body h6 {
+    font-size: 16px;
+    margin: 0;
+}
+#feedbackModal .modal-body small {
+    font-size: 13px; 
+}
+
+#feedbackModal .modal-content{ background: #f7f7f7;}
+
+#feedbackModal .modal-dialog {
+    width: 800px;
+    background: #f7f7f7;
+    margin: 0 auto;
+}
+#feedbackModal  .modal-content { 
+    border: none; border-radius:0; margin-top: 229px;
+}
+
+#feedbackModal .modalCloseButtonStyle {
+    position: absolute;
+    z-index: 1;
+    right: 8px;
+    top: 10px;
+    display: block;
+}
+#feedbackModal .modalCloseButtonStyle span{ display:block; width:25px; height:25px; background: url(app/images/sprit.png) no-repeat -96px -81px;}
+
+
+#feedbackModal .deleteButtonStyle {
+    position: absolute;
+    z-index: 1;
+    right: 15px;
+    bottom: 0px;
+    display: block;
+    width: 53px;
+    height: 64px;
+    background: rgba(51, 51, 51, 0.6);
+}
+#feedbackModal .deleteButtonStyle span {
+    display: block;
+    width: 33px;
+    height: 43px;
+    background: url(app/images/sprit.png) no-repeat -91px -116px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+#feedbackModal .link {
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    width: 29px;
+    height: 52px;
+        background: url(app/images/sprit.png) no-repeat -135px -114px;     display: none;
+}
+#feedbackModal  .link.left{      left: -60px;}
+#feedbackModal  .link.right{  right:-60px; background-position: -171px -114px;}
+
+#feedbackModal .modalStarImage {
+    position: absolute;
+    top: 3px;
+    right: 63px;
+    width: 20px;
+    height: 20px; 
+    border-radius: 50%;
+}
+#feedbackModal .modalStarImage  img{     display: block;
+    margin: 0 auto;
+    margin-top: 4px;
+}
+
+#feedbackModal .modalElipseImage{
+  position: absolute;
+    top: 0px;
+    right: 63px;
+    width: 20px;
+    height: 20px; 
+    border-radius: 50%;
+}
+#feedbackModal .modalElipseImage  img{ width:100%; height:100%;     
+}
+
+
+.showmsg {
+    background: #f7f7f7;
+    border-radius: 6px;
+    padding: 18px 16px;
+    margin-bottom: 30px;
+    position: absolute;
+    width: 100%;
+    margin-top: -113px;
+}
+.showmsg h2 {
+    margin: 0;
+    letter-spacing: -.6px;
+    white-space: nowrap;
+    text-align: left;
+}
+.showmsg span{ display:inline; vertical-align:middle; }
+.showmsg .icon-exclamation-sign {
+    width: 51px;
+    height: 51px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url(app/images/sprit.png) no-repeat -150px -56px;
+    margin-right: 12px;
+    zoom: .8;
+}
+
+.showmsg .text{ color:#FF0000; font-size:22px;}
+.showmsg .text2 {
+    color: #525252;
+    font-size: 15px;
+    margin-left: 46px;
+}
+.setMargin2{ padding-bottom:30px; padding-top:30px;}
+.btn.loadMore{    background: grey;
+    color: #fff;
+    padding: 4px 12px;
+    min-width: 120px; }
+ .onhover{ cursor:pointer;  margin-right: 38px;  }
+#myModal .modal-title{ font-size:24px;}
+#myModal .modal-header {
+    padding: 8px; 
+}
+#myModal .modal-dialog {
+    max-width: 523px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    margin: 0;
+}
+
+#myModal .modal-content { 
+    border-radius: 0; 
+    min-height: 260px;     border: 1px solid #d4d4d4;
+}
+#myModal .icon-exclamation-sign {
+    width: 51px;
+    height: 51px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url(app/images/sprit.png) no-repeat -150px -56px;
+    margin-right: 12px;
+    zoom: .8;
+}
+#myModal .text {
+    color: #FF0000;
+    font-size: 22px;
+}
+#myModal .modal-body { 
+    padding: 47px 0;
+}
+#myModal .modal-footer {
+    padding: 0 0 30px 0;
+    text-align: center;
+    border-top: none;
+}
+
+#myModal .btn-success  { width:140px;  
+    padding: 8px 10px;
+    color: white;
+    border: none;
+    background: rgba(233,95,100,1);
+    background: -moz-linear-gradient(top, rgba(233,95,100,1) 0%, rgba(203,66,68,1) 51%, rgba(187,50,50,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(233,95,100,1)), color-stop(51%, rgba(203,66,68,1)), color-stop(100%, rgba(187,50,50,1)));
+    background: -webkit-linear-gradient(top, rgba(233,95,100,1) 0%, rgba(203,66,68,1) 51%, rgba(187,50,50,1) 100%);
+    background: -o-linear-gradient(top, rgba(233,95,100,1) 0%, rgba(203,66,68,1) 51%, rgba(187,50,50,1) 100%);
+    background: -ms-linear-gradient(top, rgba(233,95,100,1) 0%, rgba(203,66,68,1) 51%, rgba(187,50,50,1) 100%);
+    background: linear-gradient(to bottom, rgba(233,95,100,1) 0%, rgba(203,66,68,1) 51%, rgba(187,50,50,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e95f64', endColorstr='#bb3232', GradientType=0 );
+}
+
+#myModal .btn-danger  { width:140px;  
+    padding: 8px 10px;
+    color: #000;
+    border: none;
+    background: rgba(203,203,203,1);
+background: -moz-linear-gradient(top, rgba(203,203,203,1) 0%, rgba(167,167,167,1) 49%, rgba(153,153,153,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(203,203,203,1)), color-stop(49%, rgba(167,167,167,1)), color-stop(100%, rgba(153,153,153,1)));
+background: -webkit-linear-gradient(top, rgba(203,203,203,1) 0%, rgba(167,167,167,1) 49%, rgba(153,153,153,1) 100%);
+background: -o-linear-gradient(top, rgba(203,203,203,1) 0%, rgba(167,167,167,1) 49%, rgba(153,153,153,1) 100%);
+background: -ms-linear-gradient(top, rgba(203,203,203,1) 0%, rgba(167,167,167,1) 49%, rgba(153,153,153,1) 100%);
+background: linear-gradient(to bottom, rgba(203,203,203,1) 0%, rgba(167,167,167,1) 49%, rgba(153,153,153,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cbcbcb', endColorstr='#999999', GradientType=0 );
+}
+
+#myModal .btn + .btn{ margin-left:30px;} 
+
+#feedbackModal .carousel-inner { 
+    overflow: visible;
+}
+#feedbackModal .link  { 
+    z-index: -1;
+}
+ 
+.setBTNMy {
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    width: 29px;
+    height: 52px; 
+    background: transparent url(app/images/sprit.png) no-repeat -135px -114px;     box-shadow: none !important; 
+}
+.setBTNMy.setLeft {
+    margin-left: -103px;
+    z-index: 77;
+}
+.setBTNMy.setRight {
+    margin-right: -51px;
+    z-index: 77;
+    right: 0;
+    margin-top: 15px;
+    background-position: -171px -114px;
+}
+
+#serverErrorModal .modal-body { 
+    padding: 0; background: url(app/images/modal-bg.png) no-repeat center bottom; min-height:300px;
+}
+#serverErrorModal .modal-body .text1 {  display:block; font-size:72px; line-height:72px; color:#7c7c7c;       padding-top: 60px; }
+#serverErrorModal .modal-body .text2 {  display:block; font-size:18px; line-height:18px; color:#981111; margin-top: 8px;}
+#serverErrorModal .modal-body .text3 {  display:block; font-size:14px; color:#000000; margin-top: 16px;}
+#serverErrorModal .modal-body .btn{ margin-top: 44px;}
+ 
+#serverErrorModal .modal-dialog {
+    width: 500px;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+#serverErrorModal .modal-content {
+    border: none;
+    border-radius: 0;
+    background: #ededed;
+    padding: 0;
+    border: none;
+}

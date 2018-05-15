@@ -1,0 +1,173 @@
+<style>
+    .alert {
+        padding: 5px;
+    }
+
+
+
+    .signInBtn {
+        min-height: 41px;
+        padding: 5px 16px;
+        color: white;
+        border: none;
+        background: rgba(233, 95, 100, 1);
+        background: -moz-linear-gradient(top, rgba(233, 95, 100, 1) 0%, rgba(203, 66, 68, 1) 51%, rgba(187, 50, 50, 1) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(233, 95, 100, 1)), color-stop(51%, rgba(203, 66, 68, 1)), color-stop(100%, rgba(187, 50, 50, 1)));
+        background: -webkit-linear-gradient(top, rgba(233, 95, 100, 1) 0%, rgba(203, 66, 68, 1) 51%, rgba(187, 50, 50, 1) 100%);
+        background: -o-linear-gradient(top, rgba(233, 95, 100, 1) 0%, rgba(203, 66, 68, 1) 51%, rgba(187, 50, 50, 1) 100%);
+        background: -ms-linear-gradient(top, rgba(233, 95, 100, 1) 0%, rgba(203, 66, 68, 1) 51%, rgba(187, 50, 50, 1) 100%);
+        background: linear-gradient(to bottom, rgba(233, 95, 100, 1) 0%, rgba(203, 66, 68, 1) 51%, rgba(187, 50, 50, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e95f64', endColorstr='#bb3232', GradientType=0);
+    }
+
+
+
+    .difficultySign {
+        text-align: right;
+        padding-top: 10px;
+    }
+
+
+
+    .panel-body {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+
+    .form-group.last {
+        margin-bottom: 0px;
+    }
+	
+	
+	 .background-color: #fff;
+   
+    /* Showcase
+=============================================*/
+
+</style>
+
+<div id="header" class="headerDiv">
+    <nav class="">
+
+
+        <div class="inner">
+
+
+            <!-- <div id="myNavbar" class="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li data-toggle="modal" data-target="#myModal" class="onhover">
+                            <span class="glyphicon glyphicon-user" style="padding-right: 6px;"></span><small>{{username}}</small>
+                        </li>
+                    </ul>
+                </div>-->
+
+            <div class="logoDiv">
+                <a><img src="app/images/logo_header.gif" class="logo"></a>
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+
+    </nav>
+
+
+
+</div>
+
+<ng2-slim-loading-bar [color]="'#c13838'" [height]="'6px'"></ng2-slim-loading-bar>
+<div class="showcase" style="background-color:#DCDCDC">
+   <!-- <img src="app/images/loginback.png" alt="" class="imgClass">-->
+</div>
+
+<section>
+    <div class="sectionDiv sectionDiv1">
+        <div class="inner">
+                <div style="text-align:right" >
+                        
+                         <label >
+                                 <ul></ul><ul></ul> Select language : 
+                           
+                           <select    #langSelect (change)="click(langSelect.value)" >
+                             <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+                           </select>
+                           
+                         </label>
+                       </div>
+            <div class="setBox">
+                <div class="panel panel-default">
+                    <div class="alert alert-danger text-center" *ngIf="errorShow">
+                        <strong>{{textMessage}}</strong>
+                    </div>
+                    <!-- <div class="alert alert-danger text-center" *ngIf="showGetUnauthorizedMessage">
+                        <strong>Unauthorized. Please login again.</strong>
+                    </div>
+                    <div class="alert alert-danger text-center" *ngIf="invalidAuth">
+                        <strong>Inavalid Username/Password</strong>
+                    </div> -->
+                    <div class="text-center signInDiv">{{ 'Sign In' | translate }}</div>
+
+                    <div class="pbody">
+                        <form autocomplete="off" (submit)="DoLogin()" name="TLogin">
+
+                            <div class="form-group">
+                                <label for="userName" class="formtext">{{ 'Username' | translate }}</label>
+                                <div class="setrelative">
+                                    <input class="form-control input-lg ng-dirty ng-touched ng-invalid" name="userName" id="userName" [(ngModel)]="user.email"
+                                        #userName="ngModel" type="text" (keydown)="disableErrorMessage()" required>
+
+                                    <span class="setIcon icon1"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="formtext">{{ 'Password' | translate }}</label>
+
+                                <div class="setrelative">
+                                    <input name="password" [(ngModel)]="user.password" #password="ngModel" id="password" type="password" class="form-control input-lg"
+                                        (keydown)="disableErrorMessage()" required/>
+                                    <span class="setIcon icon2"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="formtext">&nbsp;</label>
+                                <button type="submit" class="btn btn-danger form-control btn-lg signInBtn">{{ 'Sign In' | translate }}</button>
+                            </div>
+
+                        </form>
+                        <div style="display:none;">
+                            <button class="btn btn-primary" id="openServerErrorModal" data-toggle="modal" data-target="#serverErrorModal"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clear"></div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!--internal server error Modal -->
+<div id="serverErrorModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <div class="modal-body text-center">
+                <span class="text1">  </span>
+                <span class="text2">{{serverErrorText}}</span>
+                <span class="text3">{{'Please try again' | translate}}</span>
+                <button type="button" class="btn btn-danger " data-dismiss="modal">{{ 'OK' | translate }}</button>
+            </div>
+
+        </div>
+    </div>
+</div>

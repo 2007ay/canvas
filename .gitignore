@@ -1,0 +1,13 @@
+logs/*
+!.gitkeep
+node_modules/
+assets/libs
+build/
+dist/
+.project
+.DS_Store
+.idea
+npm-debug.log
+debug.log
+unit-tests/report-summary/
+documentation

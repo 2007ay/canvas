@@ -1,0 +1,125 @@
+ 
+  <div class="showcase" style="background-color:#DCDCDC">
+    <!--img src="app/images/loginback.png" alt="" class="imgClass">--> 
+</div> 
+
+ 
+ 
+ <section>
+<div class="sectionDiv sectionDiv1">
+   <div class="inner">
+ 
+ 
+ <div class="setSearch">
+ 
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+         
+        
+               
+               
+               
+            <form (submit)="checkFormStatus()">
+            
+            
+             
+                    
+                    <div class="container-fluid">
+                    
+                    <div class="row" *ngIf="errorMessageVisi">
+                            <div class="col-sm-12"> 
+                            
+                            
+                             <div class="showmsg"> 
+                            <h2   class="text-center">
+                            <span class="icon-exclamation-sign"></span>
+                             <span class="text">Invalid image format or size</span>
+                             <span class="text2">Try  Searching by image type <strong>.PNG</strong>, <strong>.JPG</strong>, <strong>.TIFF</strong>, <strong>.MMR</strong> and image size upto 2 MB  </span>
+                             </h2>
+                            </div>
+                            
+                            
+                     </div>
+                      </div> 
+                     
+                     
+                    
+                        <div class="row">
+                            <!--<div class="col-sm-5"> 
+                                        <div class="demo-droppable" [class.disabled]="disableDIV" [ngClass]="{'active': activeClass, 'activeTTF': activettfClass}"> 
+                                        <div *ngIf="tif" id="tiffImageId">
+                                        </div> 
+                                  <div *ngIf="nontif" id="nontiffImageId">
+                                    <img [src]="url"  [ngClass]="hideDummyImageOnDragDrop == true ? 'hideImage' : 'dragDropImageStyle'">
+                                  </div>
+                                </div>
+                            </div>-->
+
+                            <div>
+                                <div class="blockOverflow">
+                            <img src="{{queryImageUrl}}">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-7">
+                            <div class="serachBoxDiv">
+                            <label class="msg" style="color:black">Class of goods and services</label>
+                            
+                                    <div class="input-group input-group-lg">
+                                        <input type="text" 
+                                                class="form-control input-lg" 
+                                                [(ngModel)]="searchString"
+                                                onkeypress="return String.fromCharCode(event.charCode).match(/[0-9,]/g) != null"
+                                                placeholder="Class Number (Example: 01)" 
+                                                name="q" 
+                                                [disabled]="notTakeImageOnDragDrop"
+                                                >
+												
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-default btn-lg glyphBtn" type="submit" [disabled]="disableSearchBtn"><i class="image_search"></i></button>
+                                        </div>
+										
+                                    </div>
+								
+                             
+                              <label class="msg msg2" style="color:black">Search multiple classes separated with comma</label>
+
+                             </div>
+                                </div> 
+                        </div>
+                     </div>
+                 
+            </form>
+            <div style="display:none;">
+                <button class="btn btn-primary" id="openServerErrorModal" data-toggle="modal" data-target="#serverErrorModal"></button>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+ 
+ 
+ </div>
+ </div>
+ </section>
+
+
+    <!--internal server error Modal -->
+    <div id="serverErrorModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+    
+            <!-- Modal content-->
+            <div class="modal-content">
+                
+                <div class="modal-body text-center">
+                     <span class="text1">  </span>
+                     <span class="text2">{{serverErrorText}}</span>
+                     <span class="text3">Please try again.</span>
+                    <button type="button" class="btn btn-danger " data-dismiss="modal">OK</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
